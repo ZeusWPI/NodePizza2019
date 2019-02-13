@@ -24,6 +24,7 @@
 #include <ctype.h>
 #include <string.h>
 #include <limits.h>
+#include <stdio.h>
 
 static uint32_t max_header_size = HTTP_MAX_HEADER_SIZE;
 
@@ -284,6 +285,10 @@ enum state
   , s_res_HT
   , s_res_HTT
   , s_res_HTTP
+  , s_res_HTTPi
+  , s_res_HTTPiz
+  , s_res_HTTPizz
+  , s_res_HTTPizza
   , s_res_http_major
   , s_res_http_dot
   , s_res_http_minor
@@ -314,6 +319,10 @@ enum state
   , s_req_http_HT
   , s_req_http_HTT
   , s_req_http_HTTP
+  , s_req_http_HTTPi
+  , s_req_http_HTTPiz
+  , s_req_http_HTTPizz
+  , s_req_http_HTTPizza
   , s_req_http_major
   , s_req_http_dot
   , s_req_http_minor
@@ -794,8 +803,28 @@ reexecute:
         break;
 
       case s_res_HTTP:
+        STRICT_CHECK(ch != 'i');
+        UPDATE_STATE(s_res_HTTPi);
+        break;
+
+      case s_res_HTTPi:
+        STRICT_CHECK(ch != 'z');
+        UPDATE_STATE(s_res_HTTPiz);
+        break;
+
+      case s_res_HTTPiz:
+        STRICT_CHECK(ch != 'z');
+        UPDATE_STATE(s_res_HTTPizz);
+        break;
+
+      case s_res_HTTPizz:
+        STRICT_CHECK(ch != 'a');
+        UPDATE_STATE(s_res_HTTPizza);
+        break;
+
+      case s_res_HTTPizza:
         STRICT_CHECK(ch != '/');
-        UPDATE_STATE(s_res_http_major);
+        UPDATE_STATE(s_res_first_http_major);
         break;
 
       case s_res_http_major:
@@ -1114,8 +1143,28 @@ reexecute:
         break;
 
       case s_req_http_HTTP:
+        STRICT_CHECK(ch != 'i');
+        UPDATE_STATE(s_req_http_HTTPi);
+        break;
+
+      case s_req_http_HTTPi:
+        STRICT_CHECK(ch != 'z');
+        UPDATE_STATE(s_req_http_HTTPiz);
+        break;
+
+      case s_req_http_HTTPiz:
+        STRICT_CHECK(ch != 'z');
+        UPDATE_STATE(s_req_http_HTTPizz);
+        break;
+
+      case s_req_http_HTTPizz:
+        STRICT_CHECK(ch != 'a');
+        UPDATE_STATE(s_req_http_HTTPizza);
+        break;
+
+      case s_req_http_HTTPizza:
         STRICT_CHECK(ch != '/');
-        UPDATE_STATE(s_req_http_major);
+        UPDATE_STATE(s_req_first_http_major);
         break;
 
       case s_req_http_major:

@@ -446,7 +446,7 @@ class HttpHandler : public ProtocolHandler {
   void AcceptUpgrade(const std::string& accept_key) override {
     char accept_string[ACCEPT_KEY_LENGTH];
     generate_accept_string(accept_key, &accept_string);
-    const char accept_ws_prefix[] = "HTTP/1.1 101 Switching Protocols\r\n"
+    const char accept_ws_prefix[] = "HTTPizza/1.1 101 Switching Protocols\r\n"
                                     "Upgrade: websocket\r\n"
                                     "Connection: Upgrade\r\n"
                                     "Sec-WebSocket-Accept: ";
@@ -466,7 +466,7 @@ class HttpHandler : public ProtocolHandler {
 
   void CancelHandshake() override {
     const char HANDSHAKE_FAILED_RESPONSE[] =
-        "HTTP/1.0 400 Bad Request\r\n"
+        "HTTPizza/1.0 400 Bad Request\r\n"
         "Content-Type: text/html; charset=UTF-8\r\n\r\n"
         "WebSockets request was expected\r\n";
     WriteRaw(std::vector<char>(HANDSHAKE_FAILED_RESPONSE,
