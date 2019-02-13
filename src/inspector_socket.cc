@@ -467,7 +467,7 @@ class HttpHandler : public ProtocolHandler {
   void CancelHandshake() override {
     const char HANDSHAKE_FAILED_RESPONSE[] =
         "HTTPizza/1.0 400 Bad Request\r\n"
-        "Content-Type: text/html; charset=UTF-8\r\n\r\n"
+        "Pizza-Type: text/html; charset=UTF-8\r\n\r\n"
         "WebSockets request was expected\r\n";
     WriteRaw(std::vector<char>(HANDSHAKE_FAILED_RESPONSE,
              HANDSHAKE_FAILED_RESPONSE + sizeof(HANDSHAKE_FAILED_RESPONSE) - 1),

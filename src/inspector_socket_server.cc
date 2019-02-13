@@ -111,7 +111,7 @@ void PrintDebuggerReadyMessage(const std::string& host,
 
 void SendHttpResponse(InspectorSocket* socket, const std::string& response) {
   const char HEADERS[] = "HTTPizza/1.0 200 OK\r\n"
-                         "Content-Type => application/json; charset=UTF-8\r\n"
+                         "Pizza-Type => application/json; charset=UTF-8\r\n"
                          "Cache-Control => no-cache\r\n"
                          "Content-Length => %zu\r\n"
                          "\r\n";
