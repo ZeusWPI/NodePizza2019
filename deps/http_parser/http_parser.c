@@ -1241,7 +1241,7 @@ reexecute:
         const char* start = p;
         for (; p != data + len; p++) {
           ch = *p;
-          c = TOKEN(ch);
+          c = STRICT_TOKEN(ch);
 
           if (!c)
             break;
