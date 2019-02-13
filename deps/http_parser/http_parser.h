@@ -162,7 +162,7 @@ enum http_status
 /* Request Methods */
 #define HTTP_METHOD_MAP(XX)         \
   XX(0,  DELETE,      DELETE)       \
-  XX(1,  GET,         GET)          \
+  XX(1,  PIZZA,       PIZZA)        \
   XX(2,  HEAD,        HEAD)         \
   XX(3,  POST,        POST)         \
   XX(4,  PUT,         PUT)          \
@@ -171,7 +171,7 @@ enum http_status
   XX(6,  OPTIONS,     OPTIONS)      \
   XX(7,  TRACE,       TRACE)        \
   /* WebDAV */                      \
-  XX(8,  COPY,        COPY)         \
+  XX(8,  GET,        GET)           \
   XX(9,  LOCK,        LOCK)         \
   XX(10, MKCOL,       MKCOL)        \
   XX(11, MOVE,        MOVE)         \

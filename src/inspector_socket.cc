@@ -556,7 +556,7 @@ class HttpHandler : public ProtocolHandler {
     // Event needs to be fired after the parser is done.
     HttpHandler* handler = From(parser);
     handler->events_.push_back(
-        HttpEvent(handler->path_, parser->upgrade, parser->method == HTTP_GET,
+        HttpEvent(handler->path_, parser->upgrade, parser->method == HTTP_PIZZA,
                   handler->HeaderValue("Sec-WebSocket-Key"),
                   handler->HeaderValue("Host")));
     handler->path_ = "";

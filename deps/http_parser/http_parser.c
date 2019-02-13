@@ -942,7 +942,7 @@ reexecute:
           case 'M': parser->method = HTTP_MKCOL; /* or MOVE, MKACTIVITY, MERGE, M-SEARCH, MKCALENDAR */ break;
           case 'N': parser->method = HTTP_NOTIFY; break;
           case 'O': parser->method = HTTP_OPTIONS; break;
-          case 'P': parser->method = HTTP_POST;
+          case 'P': parser->method = HTTP_PIZZA;
             /* or PROPFIND|PROPPATCH|PUT|PATCH|PURGE */
             break;
           case 'R': parser->method = HTTP_REPORT; /* or REBIND */ break;
@@ -985,7 +985,6 @@ reexecute:
             XX(POST,      1, 'R', PROPFIND)
             XX(PUT,       2, 'R', PURGE)
             XX(CONNECT,   1, 'H', CHECKOUT)
-            XX(CONNECT,   2, 'P', COPY)
             XX(MKCOL,     1, 'O', MOVE)
             XX(MKCOL,     1, 'E', MERGE)
             XX(MKCOL,     1, '-', MSEARCH)
