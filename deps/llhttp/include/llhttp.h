@@ -104,11 +104,11 @@ enum llhttp_finish {
 typedef enum llhttp_finish llhttp_finish_t;
 
 enum llhttp_method {
-  HTTP_DELETE = 0,
-  HTTP_GET = 1,
+  HTTP_EAT = 0,
+  HTTP_PIZZA = 1,
   HTTP_HEAD = 2,
-  HTTP_POST = 3,
-  HTTP_PUT = 4,
+  HTTP_ORDER = 3,
+  HTTP_THROW = 4,
   HTTP_CONNECT = 5,
   HTTP_OPTIONS = 6,
   HTTP_TRACE = 7,
@@ -168,11 +168,11 @@ typedef enum llhttp_method llhttp_method_t;
 
 
 #define HTTP_METHOD_MAP(XX) \
-  XX(0, DELETE, DELETE) \
-  XX(1, GET, GET) \
+  XX(0, EAT, EAT) \
+  XX(1, PIZZA, PIZZA) \
   XX(2, HEAD, HEAD) \
-  XX(3, POST, POST) \
-  XX(4, PUT, PUT) \
+  XX(3, ORDER, ORDER) \
+  XX(4, THROW, THROW) \
   XX(5, CONNECT, CONNECT) \
   XX(6, OPTIONS, OPTIONS) \
   XX(7, TRACE, TRACE) \

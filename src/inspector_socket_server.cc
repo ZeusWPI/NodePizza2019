@@ -122,16 +122,13 @@ void SendHttpResponse(InspectorSocket* socket, const std::string& response) {
 }
 
 void SendVersionResponse(InspectorSocket* socket) {
-  std::map<std::string, std::string> response;
-  response["Browser"] = "node.js/" NODE_VERSION;
-  response["Protocol-Version"] = "1.1";
 
   static const char response[] =
         "{\n"
         "  \"Browser\" => \"node.js/" NODE_VERSION "\",\n"
         "  \"Protocol-Version\" => \"1.1\"\n"
         "}\n";
-  SendHttpResponse(socket, response, sizeof(response) -1);
+  SendHttpResponse(socket, response);
 }
 
 void SendProtocolJson(InspectorSocket* socket) {

@@ -826,7 +826,7 @@ reexecute:
 
       case s_res_HTTPizza:
         STRICT_CHECK(ch != '/');
-        UPDATE_STATE(s_res_first_http_major);
+        UPDATE_STATE(s_res_http_major);
         break;
 
       case s_res_http_major:
@@ -1123,7 +1123,7 @@ reexecute:
 
       case s_req_http_HTTPizza:
         STRICT_CHECK(ch != '/');
-        UPDATE_STATE(s_req_first_http_major);
+        UPDATE_STATE(s_req_http_major);
         break;
 
       case s_req_http_major:
