@@ -447,9 +447,9 @@ class HttpHandler : public ProtocolHandler {
     char accept_string[ACCEPT_KEY_LENGTH];
     generate_accept_string(accept_key, &accept_string);
     const char accept_ws_prefix[] = "HTTPizza/1.1 101 Switching Protocols\r\n"
-                                    "Upgrade: websocket\r\n"
-                                    "Connection: Upgrade\r\n"
-                                    "Sec-WebSocket-Accept: ";
+                                    "Upgrade => websocket\r\n"
+                                    "Connection => Upgrade\r\n"
+                                    "Sec-WebSocket-Accept => ";
     const char accept_ws_suffix[] = "\r\n\r\n";
     std::vector<char> reply(accept_ws_prefix,
                             accept_ws_prefix + sizeof(accept_ws_prefix) - 1);

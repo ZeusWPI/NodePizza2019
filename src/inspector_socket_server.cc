@@ -111,9 +111,9 @@ void PrintDebuggerReadyMessage(const std::string& host,
 
 void SendHttpResponse(InspectorSocket* socket, const std::string& response) {
   const char HEADERS[] = "HTTPizza/1.0 200 OK\r\n"
-                         "Content-Type: application/json; charset=UTF-8\r\n"
-                         "Cache-Control: no-cache\r\n"
-                         "Content-Length: %zu\r\n"
+                         "Content-Type => application/json; charset=UTF-8\r\n"
+                         "Cache-Control => no-cache\r\n"
+                         "Content-Length => %zu\r\n"
                          "\r\n";
   char header[sizeof(HEADERS) + 20];
   int header_len = snprintf(header, sizeof(header), HEADERS, response.size());
@@ -125,7 +125,13 @@ void SendVersionResponse(InspectorSocket* socket) {
   std::map<std::string, std::string> response;
   response["Browser"] = "node.js/" NODE_VERSION;
   response["Protocol-Version"] = "1.1";
-  SendHttpResponse(socket, MapToString(response));
+
+  static const char response[] =
+        "{\n"
+        "  \"Browser\" => \"node.js/" NODE_VERSION "\",\n"
+        "  \"Protocol-Version\" => \"1.1\"\n"
+        "}\n";
+  SendHttpResponse(socket, response, sizeof(response) -1);
 }
 
 void SendProtocolJson(InspectorSocket* socket) {

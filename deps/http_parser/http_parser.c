@@ -331,6 +331,8 @@ enum state
 
   , s_header_field_start
   , s_header_field
+  , s_header_field_discard_ws
+  , s_header_field_separator
   , s_header_value_discard_ws
   , s_header_value_discard_ws_almost_done
   , s_header_value_discard_lws
@@ -1396,8 +1398,14 @@ reexecute:
           break;
         }
 
-        if (ch == ':') {
-          UPDATE_STATE(s_header_value_discard_ws);
+        if (ch == ' ' || ch == '\t') {
+          UPDATE_STATE(s_header_field_discard_ws);
+          CALLBACK_DATA(header_field);
+          break;
+        }
+
+        if (ch == '=') {
+          UPDATE_STATE(s_header_field_separator);
           CALLBACK_DATA(header_field);
           break;
         }
@@ -1405,6 +1413,17 @@ reexecute:
         SET_ERRNO(HPE_INVALID_HEADER_TOKEN);
         goto error;
       }
+
+      case s_header_field_discard_ws:
+        if (ch == ' ' || ch == '\t') break;
+        STRICT_CHECK(ch != '=');
+        UPDATE_STATE(s_header_field_separator);
+        break;
+
+      case s_header_field_separator:
+        STRICT_CHECK(ch != '>');
+        UPDATE_STATE(s_header_value_discard_ws);
+        break;
 
       case s_header_value_discard_ws:
         if (ch == ' ' || ch == '\t') break;
