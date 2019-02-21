@@ -91,65 +91,65 @@ typedef int (*http_cb) (http_parser*);
 
 /* Status Codes */
 #define HTTP_STATUS_MAP(XX)                                                 \
-  XX(100, CONTINUE,                        Continue)                        \
-  XX(101, SWITCHING_PROTOCOLS,             Switching Protocols)             \
-  XX(102, PROCESSING,                      Processing)                      \
-  XX(200, OK,                              OK)                              \
-  XX(201, CREATED,                         Created)                         \
-  XX(202, ACCEPTED,                        Accepted)                        \
-  XX(203, NON_AUTHORITATIVE_INFORMATION,   Non-Authoritative Information)   \
-  XX(204, NO_CONTENT,                      No Content)                      \
-  XX(205, RESET_CONTENT,                   Reset Content)                   \
-  XX(206, PARTIAL_CONTENT,                 Partial Content)                 \
-  XX(207, MULTI_STATUS,                    Multi-Status)                    \
-  XX(208, ALREADY_REPORTED,                Already Reported)                \
-  XX(226, IM_USED,                         IM Used)                         \
-  XX(300, MULTIPLE_CHOICES,                Multiple Choices)                \
-  XX(301, MOVED_PERMANENTLY,               Moved Permanently)               \
-  XX(302, FOUND,                           Found)                           \
-  XX(303, SEE_OTHER,                       See Other)                       \
-  XX(304, NOT_MODIFIED,                    Not Modified)                    \
-  XX(305, USE_PROXY,                       Use Proxy)                       \
-  XX(307, TEMPORARY_REDIRECT,              Temporary Redirect)              \
-  XX(308, PERMANENT_REDIRECT,              Permanent Redirect)              \
-  XX(400, BAD_REQUEST,                     Bad Request)                     \
-  XX(401, UNAUTHORIZED,                    Unauthorized)                    \
-  XX(402, PAYMENT_REQUIRED,                Payment Required)                \
-  XX(403, FORBIDDEN,                       Forbidden)                       \
-  XX(404, NOT_FOUND,                       Not Found)                       \
-  XX(405, METHOD_NOT_ALLOWED,              Method Not Allowed)              \
-  XX(406, NOT_ACCEPTABLE,                  Not Acceptable)                  \
-  XX(407, PROXY_AUTHENTICATION_REQUIRED,   Proxy Authentication Required)   \
-  XX(408, REQUEST_TIMEOUT,                 Request Timeout)                 \
-  XX(409, CONFLICT,                        Conflict)                        \
-  XX(410, GONE,                            Gone)                            \
-  XX(411, LENGTH_REQUIRED,                 Length Required)                 \
-  XX(412, PRECONDITION_FAILED,             Precondition Failed)             \
-  XX(413, PAYLOAD_TOO_LARGE,               Payload Too Large)               \
-  XX(414, URI_TOO_LONG,                    URI Too Long)                    \
-  XX(415, UNSUPPORTED_MEDIA_TYPE,          Unsupported Media Type)          \
-  XX(416, RANGE_NOT_SATISFIABLE,           Range Not Satisfiable)           \
-  XX(417, EXPECTATION_FAILED,              Expectation Failed)              \
-  XX(421, MISDIRECTED_REQUEST,             Misdirected Request)             \
-  XX(422, UNPROCESSABLE_ENTITY,            Unprocessable Entity)            \
-  XX(423, LOCKED,                          Locked)                          \
-  XX(424, FAILED_DEPENDENCY,               Failed Dependency)               \
-  XX(426, UPGRADE_REQUIRED,                Upgrade Required)                \
-  XX(428, PRECONDITION_REQUIRED,           Precondition Required)           \
-  XX(429, TOO_MANY_REQUESTS,               Too Many Requests)               \
-  XX(431, REQUEST_HEADER_FIELDS_TOO_LARGE, Request Header Fields Too Large) \
-  XX(451, UNAVAILABLE_FOR_LEGAL_REASONS,   Unavailable For Legal Reasons)   \
-  XX(500, INTERNAL_SERVER_ERROR,           Internal Server Error)           \
-  XX(501, NOT_IMPLEMENTED,                 Not Implemented)                 \
-  XX(502, BAD_GATEWAY,                     Bad Gateway)                     \
-  XX(503, SERVICE_UNAVAILABLE,             Service Unavailable)             \
-  XX(504, GATEWAY_TIMEOUT,                 Gateway Timeout)                 \
-  XX(505, HTTP_VERSION_NOT_SUPPORTED,      HTTP Version Not Supported)      \
-  XX(506, VARIANT_ALSO_NEGOTIATES,         Variant Also Negotiates)         \
-  XX(507, INSUFFICIENT_STORAGE,            Insufficient Storage)            \
-  XX(508, LOOP_DETECTED,                   Loop Detected)                   \
-  XX(510, NOT_EXTENDED,                    Not Extended)                    \
-  XX(511, NETWORK_AUTHENTICATION_REQUIRED, Network Authentication Required) \
+XX(100, CONTINUE,   More Pizza)                        \
+XX(101, SWITCHING_PROTOCOLS,   Other Pizza)             \
+XX(102, PROCESSING,   Processing Pizza)                      \
+XX(200, OK,   Pizza)                              \
+XX(201, CREATED,   Created Pizza)                         \
+XX(202, ACCEPTED,   Accepted Pizza)                        \
+XX(203, NON_AUTHORITATIVE_INFORMATION,   Non-Authoritative Information)   \
+XX(204, NO_CONTENT,   No Pizza)                      \
+XX(205, RESET_CONTENT,   Reset Pizza)                   \
+XX(206, PARTIAL_CONTENT,   Partial Pizza)                 \
+XX(207, MULTI_STATUS,   Multi-Pizza)                    \
+XX(208, ALREADY_REPORTED,   Already Pizza)                \
+XX(226, IM_USED,   Pizza IM Used)                         \
+XX(300, MULTIPLE_CHOICES,   Multiple Pizzas)                \
+XX(301, MOVED_PERMANENTLY,   Moved Pizza)               \
+XX(302, FOUND,   Found Pizza)                           \
+XX(303, SEE_OTHER,   See Other Pizza)                       \
+XX(304, NOT_MODIFIED,   Pizza Not Modified)                    \
+XX(305, USE_PROXY,   Use Pizza Proxy)                       \
+XX(307, TEMPORARY_REDIRECT,   Temporary Pizza)              \
+XX(308, PERMANENT_REDIRECT,   Permanent Pizza)              \
+XX(400, BAD_REQUEST,   Bad Pizza)                     \
+XX(401, UNAUTHORIZED,   Unauthorized Pizza)                    \
+XX(402, PAYMENT_REQUIRED,   Payment for Pizza Required)                \
+XX(403, FORBIDDEN,   Forbidden Pizza)                       \
+XX(404, NOT_FOUND,   Pizza Not Found)                       \
+XX(405, METHOD_NOT_ALLOWED,   Pizza Method Not Allowed)              \
+XX(406, NOT_ACCEPTABLE,   Pizza Not Acceptable)                  \
+XX(407, PROXY_AUTHENTICATION_REQUIRED,   Proxy Authentication Required)   \
+XX(408, REQUEST_TIMEOUT,   Pizza Timeout)                 \
+XX(409, CONFLICT,   Pizza Conflict)                        \
+XX(410, GONE,   Pizza Gone)                            \
+XX(411, LENGTH_REQUIRED,   Pizza Length Required)                 \
+XX(412, PRECONDITION_FAILED,   Pizza Precondition Failed)             \
+XX(413, PAYLOAD_TOO_LARGE,   Pizza Too Large)               \
+XX(414, URI_TOO_LONG,   Pizza Name Too Long)                    \
+XX(415, UNSUPPORTED_MEDIA_TYPE,   Unsupported Pizza Type)          \
+XX(416, RANGE_NOT_SATISFIABLE,   Pizza Range Not Satisfiable)           \
+XX(417, EXPECTATION_FAILED,   Pizza Failed Expectations)              \
+XX(421, MISDIRECTED_REQUEST,   Misdirected Pizza)             \
+XX(422, UNPROCESSABLE_ENTITY,   Unprocessable Pizza)            \
+XX(423, LOCKED,   Locked Pizza)                          \
+XX(424, FAILED_DEPENDENCY,   Failed Pizza)               \
+XX(426, UPGRADE_REQUIRED,   Pizza Upgrade Required)                \
+XX(428, PRECONDITION_REQUIRED,   Pizza Precondition Required)           \
+XX(429, TOO_MANY_REQUESTS,   Too Many Pizza Requests)               \
+XX(431, REQUEST_HEADER_FIELDS_TOO_LARGE, Request Header Fields Too Large) \
+XX(451, UNAVAILABLE_FOR_LEGAL_REASONS,   Unavailable For Legal Reasons)   \
+XX(500, INTERNAL_SERVER_ERROR,   Internal Pizza Error)           \
+XX(501, NOT_IMPLEMENTED,   Pizza Not Implemented)                 \
+XX(502, BAD_GATEWAY,   Bad Pizza Gateway)                     \
+XX(503, SERVICE_UNAVAILABLE,   Pizza Service Unavailable)             \
+XX(504, GATEWAY_TIMEOUT,   Pizza Gateway Timeout)                 \
+XX(505, HTTP_VERSION_NOT_SUPPORTED,   HTTPizza Version Not Supported)      \
+XX(506, VARIANT_ALSO_NEGOTIATES,   Pizza Variant Also Negotiates)         \
+XX(507, INSUFFICIENT_STORAGE,   Insufficient Pizza Storage)            \
+XX(508, LOOP_DETECTED,   Looping Pizza Detected)                   \
+XX(510, NOT_EXTENDED,   Pizza Not Extended)                    \
+XX(511, NETWORK_AUTHENTICATION_REQUIRED, Network Authentication Required) \
 
 enum http_status
   {
@@ -170,7 +170,7 @@ enum http_status
   XX(5,  CONNECT,     CONNECT)      \
   XX(6,  OPTIONS,     OPTIONS)      \
   XX(7,  TRACE,       TRACE)        \
-  
+
 enum http_method
   {
 #define XX(num, name, string) HTTP_##name = num,
